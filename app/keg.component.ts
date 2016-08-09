@@ -5,9 +5,10 @@ import { Keg } from './keg.model';
   selector: 'keg-display',
   inputs: ['keg'],
   template: `
-  <div [class.highPrice]='keg.price > 5' [class.highABU]='keg.abu > 5'>
-    <h3>{{ keg.brewery + " " + keg.beer + " (ABU: " + keg.abu + ")" }}</h3>
-    <h5>{{ "Price: $" + keg.price }}</h5>
+  <div>
+    <h3>{{ keg.brewery + " " + keg.beer }}</h3>
+    <h5 [class.highABU]='keg.abu > 5'> {{"ABU: " + keg.abu }}</h5>
+    <h5 [class.highPrice]='keg.price > 5' >{{ "Price: $" + keg.price }}</h5>
     <h5>{{ "Pints Left: " + keg.pintsLeft }}</h5>
     <button (click)="minusOne()">Subtract Pint</button>
   </div>

@@ -1,16 +1,84 @@
+$green : rgba(163,174,134,.9);
+$blue : rgba(51,59,66,.9);
+$light-grey: rgba(117,126,134,.9);
+$light-steely-grey: rgba(217,219,230,1);
+$red : rgba(255,63,0,.75);
+
+
+.main {
+  margin: 3% 5% 0;
+}
+
+.main h1 {
+  font-family: 'Nosifer', cursive;
+  font-size: 5em;
+}
+
 .filter {
   margin-top: 20px;
   margin-bottom: 20px;
 }
 
-.selected {
-  color: blue;
-}
-
 .highPrice {
-  color: red;
+  color: $red;
 }
 
 .highABU {
-  font-style: italic;
+  color: $red;
 }
+
+@mixin flexbox() {
+   display: -webkit-box;
+   display: -moz-box;
+   display: -ms-flexbox;
+   display: -webkit-flex;
+   display: flex;
+ }
+
+ @mixin flex($values) {
+   -webkit-box-flex: $values;
+   -moz-box-flex:  $values;
+   -webkit-flex:  $values;
+   -ms-flex:  $values;
+   flex:  $values;
+ }
+
+ @mixin order($val) {
+   -webkit-box-ordinal-group: $val;
+   -moz-box-ordinal-group: $val;
+   -ms-flex-order: $val;
+   -webkit-order: $val;
+   order: $val;
+ }
+
+ .keg-container {
+   @include flexbox();
+   justify-content: space-between;
+   flex-wrap: wrap;
+   flex-direction: row;
+
+ }
+
+ .keg {
+   @include flex(1 300px);
+   background: $blue;
+   color: $light-steely-grey;
+   height: 200px;
+   margin: 20px;
+   text-align: center;
+ }
+
+ .item {
+   @include flex(1 auto);
+   margin: auto;
+ }
+ .item2 {
+   @include flex(1 auto);
+   margin: auto;
+   text-align: right;
+ }
+
+ .selected {
+   background-color: $light-grey;
+   color: #fff;
+ }

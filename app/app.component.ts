@@ -6,12 +6,8 @@ import { Keg } from './keg.model';
   selector: 'my-app',
   directives: [KegListComponent],
   template: `
-    <div class="container">
-      <h1>To-Do List</h1>
-      <keg-list
-        [kegList]="kegs"
-        (onKegSelect)="kegWasSelected($event)">
-      </keg-list>
+    <div class="main">
+      <keg-list [kegList]="kegs"></keg-list>
     </div>
   `
 })
@@ -25,7 +21,5 @@ export class AppComponent {
       new Keg("Oscar Blues", "Dave's Pale Ale", 5.7, 4, 124, 3)
     ];
   }
-  kegWasSelected(clickedKeg: Keg): void {
-    console.log("parent");
-  }
+
 }
