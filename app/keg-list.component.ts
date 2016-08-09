@@ -1,7 +1,7 @@
 import { Component, EventEmitter } from 'angular2/core';
 import { KegComponent } from './keg.component';
 import { Keg } from './keg.model';
-// import { EditKegDetailsComponent } from './edit-keg-details.component';
+import { EditKegDetailsComponent } from './edit-keg-details.component';
 import { NewKegComponent } from './new-keg.component';
 import {BeerLevelPipe} from './beer-level.pipe';
 
@@ -10,7 +10,7 @@ import {BeerLevelPipe} from './beer-level.pipe';
   inputs: ['kegList'],
   outputs: ['onKegSelect'],
   pipes: [BeerLevelPipe],
-  directives: [KegComponent, NewKegComponent],
+  directives: [KegComponent, EditKegDetailsComponent, NewKegComponent],
   template: `
   <select (change)="onChange($event.target.value)" class="filter">
     <option value="all" selected="selected">All Kegs</option>

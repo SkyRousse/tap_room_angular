@@ -22,8 +22,8 @@ export class NewKegComponent {
   addKeg(inputBrewery: HTMLInputElement, inputBeer: HTMLInputElement, inputABU: HTMLInputElement, inputPrice: HTMLInputElement){
     this.onSubmitNewKeg.emit({brewery: inputBrewery.value,
        beer: inputBeer.value,
-       abu: inputABU.value,
-       price: inputPrice.value});
+       abu: parseFloat(inputABU.value).toFixed(1),
+       price: parseFloat(inputPrice.value).toFixed(2)});
     inputBrewery.value = '';
     inputBeer.value = '';
     inputABU.value = '';
